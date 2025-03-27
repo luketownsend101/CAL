@@ -187,7 +187,7 @@ def chat():
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a helpful coding assistant. Answer only the questions asked after the java code."},
                 {"role": "user", "content": f"Here's my current Java code:\n\n{editor_content}\n\n{user_message}"}
