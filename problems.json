@@ -1,0 +1,182 @@
+[
+    {
+        "id": 0,
+        "prompt": "Intro",
+        "template": "// Pick a Question from the dropdown menu above\npublic class Main {\n    public static void main(String[] args) {\n        // Your code here\n    }\n}",
+        "test_cases": []
+    },
+    {
+        "id": 1,
+        "prompt": "Problem 1: Easy - Find Maximum in Array",
+        "function_name": "findMax",
+        "template": "/*\n * Write a static method findMax() with the following signature:\n * \n * public static double findMax(double[] data)\n * \n * The method should find and return the largest value in an array.\n * \n * Example inputs and expected outputs:\n * findMax({1.1, 2.2, 3.3, 4.4, 5.5}) -> 5.5\n * findMax({-1.5, -2.3, -0.7}) -> -0.7\n */\n\npublic class Main {\n    public static double findMax(double[] data) {\n        // Write your code here\n        return 0.0; // Placeholder\n    }\n\n    public static void main(String[] args) {\n        // Convert String[] args to double[] for testing\n        double[] data = java.util.Arrays.stream(args).mapToDouble(Double::parseDouble).toArray();\n        System.out.println(findMax(data));\n    }\n}",
+        "test_cases": [
+            {
+                "args": ["1.1", "2.2", "3.3", "4.4", "5.5"],
+                "expected_output": "5.5"
+            },
+            {
+                "args": ["-1.5", "-2.3", "-0.7"],
+                "expected_output": "-0.7"
+            },
+            {
+                "args": ["10.0", "20.0", "15.0"],
+                "expected_output": "20.0"
+            },
+            {
+                "args": ["100.0"],
+                "expected_output": "100.0"
+            },
+            {
+                "args": ["-5.0", "-10.0", "-3.0", "-8.0"],
+                "expected_output": "-3.0"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "prompt": "Problem 2: Easy - Reverse an Array",
+        "function_name": "reverse",
+        "template": "/*\n * Write a static method reverse() with the following signature:\n * \n * public static double[] reverse(double[] data)\n * \n * The method should reverse the order of elements in the input array \n * and return a new array with the reversed order. \n * The input array should remain unchanged.\n * \n * Example inputs and expected outputs:\n * reverse({1.1, 2.2, 3.3}) -> {3.3, 2.2, 1.1}\n * reverse({4.4, 5.5, 6.6, 7.7}) -> {7.7, 6.6, 5.5, 4.4}\n */\n\npublic class Main {\n    public static double[] reverse(double[] data) {\n        // Write your code here\n        return new double[0]; // Placeholder\n    }\n\n    public static void main(String[] args) {\n        // Convert String[] args to double[] for testing\n        double[] data = java.util.Arrays.stream(args).mapToDouble(Double::parseDouble).toArray();\n        double[] result = reverse(data);\n        System.out.println(java.util.Arrays.toString(result));\n    }\n}",
+        "test_cases": [
+            {
+                "args": ["1.1", "2.2", "3.3"],
+                "expected_output": "[3.3, 2.2, 1.1]"
+            },
+            {
+                "args": ["4.4", "5.5", "6.6", "7.7"],
+                "expected_output": "[7.7, 6.6, 5.5, 4.4]"
+            },
+            {
+                "args": ["10.0", "20.0"],
+                "expected_output": "[20.0, 10.0]"
+            },
+            {
+                "args": ["1.0"],
+                "expected_output": "[1.0]"
+            },
+            {
+                "args": [],
+                "expected_output": "[]"
+            }
+        ]
+    },
+    
+    {
+        "id": 3,
+        "prompt": "Problem 3: Medium - Detect 'No Triples' in Array",
+        "function_name": "noTriples",
+        "template": "/*\n * Write a program NoTriples containing a static method noTriples() with the following signature:\n * \n * public static boolean noTriples(int[] nums)\n * \n * Given an array of int s, we’ll say that a triple is a value appearing three times in a row in the array. \n * The method should return true if the array does not contain any triples.\n * \n * Example inputs and expected outputs:\n * noTriples({1, 1, 2, 2, 1}) -> true\n * noTriples({1, 1, 2, 2, 2, 1}) -> false\n * noTriples({1, 1, 1, 2, 2, 2, 1}) -> false\n * \n * Hint: Check values of the array that are at indices higher than the current loop variable value. \n * Make sure you don’t go out of bounds!\n */\n\npublic class Main {\n    public static boolean noTriples(int[] nums) {\n        // Write your code here\n        return false; // Placeholder\n    }\n\n    public static void main(String[] args) {\n        // Convert String[] args to int[] for testing\n        int[] nums = java.util.Arrays.stream(args).mapToInt(Integer::parseInt).toArray();\n        System.out.println(noTriples(nums));\n    }\n}",
+        "test_cases": [
+            {
+                "args": ["1", "1", "2", "2", "1"],
+                "expected_output": "true"
+            },
+            {
+                "args": ["1", "1", "2", "2", "2", "1"],
+                "expected_output": "false"
+            },
+            {
+                "args": ["1", "1", "1", "2", "2", "2", "1"],
+                "expected_output": "false"
+            },
+            {
+                "args": ["1", "2", "3", "4", "5"],
+                "expected_output": "true"
+            },
+            {
+                "args": ["2", "2", "2"],
+                "expected_output": "false"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "prompt": "Problem 4: Medium - Detect '2-7-1' Pattern in Array",
+        "function_name": "has271",
+        "template": "/*\n * Write a program Has271 containing a static method has271() with the following signature:\n * \n * public static boolean has271(int[] nums)\n * \n * Given an array of type int[], return true if the array contains a 2, 7, 1 pattern; \n * that is, a value, followed by the value plus 5, followed by the value minus 1.\n * \n * Example inputs and expected outputs:\n * has271({1, 2, 7, 1}) -> true\n * has271({1, 2, 8, 1}) -> false\n * has271({2, 7, 1}) -> true\n * has271({4, 9, 3}) -> true\n */\n\npublic class Main {\n    public static boolean has271(int[] nums) {\n        // Write your code here\n        return false; // Placeholder\n    }\n\n    public static void main(String[] args) {\n        // Convert String[] args to int[] for testing\n        int[] nums = java.util.Arrays.stream(args).mapToInt(Integer::parseInt).toArray();\n        System.out.println(has271(nums));\n    }\n}",
+        "test_cases": [
+            {
+                "args": ["1", "2", "7", "1"],
+                "expected_output": "true"
+            },
+            {
+                "args": ["1", "2", "8", "1"],
+                "expected_output": "false"
+            },
+            {
+                "args": ["2", "7", "1"],
+                "expected_output": "true"
+            },
+            {
+                "args": ["4", "9", "3"],
+                "expected_output": "true"
+            },
+            {
+                "args": ["1", "2", "3", "4"],
+                "expected_output": "false"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "prompt": "Problem 5: Medium - Two Sum",
+        "function_name": "twoSum",
+        "template": "/*\n * Write a static method twoSum() with the following signature:\n * \n * public static int[] twoSum(int[] nums, int target)\n * \n * The method should return indices of the two numbers in the input array nums \n * such that they add up to the given target. Each input would have exactly one solution.\n * \n * Example inputs and expected outputs:\n * twoSum({2, 7, 11, 15}, 9) -> {0, 1}\n */\n\npublic class Main {\n    public static int[] twoSum(int[] nums, int target) {\n        // Write your code here\n        return new int[0]; // Placeholder\n    }\n\n    public static void main(String[] args) {\n        // Convert args[0] (comma-separated array) to int[] and parse the target\n        String[] numsAsString = args[0].split(\",\");\n        int[] nums = java.util.Arrays.stream(numsAsString).mapToInt(Integer::parseInt).toArray();\n        int target = Integer.parseInt(args[1]);\n        \n        // Call twoSum and print the result\n        int[] result = twoSum(nums, target);\n        System.out.println(java.util.Arrays.toString(result));\n    }\n}",
+        "test_cases": [
+            {
+                "args": ["2,7,11,15", "9"],
+                "expected_output": "[0, 1]"
+            },
+            {
+                "args": ["3,2,4", "6"],
+                "expected_output": "[1, 2]"
+            },
+            {
+                "args": ["3,3", "6"],
+                "expected_output": "[0, 1]"
+            },
+            {
+                "args": ["1,5,3,8", "9"],
+                "expected_output": "[0, 3]"
+            },
+            {
+                "args": ["1,10,25,35,60", "90"],
+                "expected_output": "[2, 4]"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "prompt": "Problem 6: Hard - Convert Roman Numerals to Integers",
+        "function_name": "romanToInt",
+        "template": "/*\n * Write a static method romanToInt() with the following signature:\n * \n * public static int romanToInt(String s)\n * \n * Roman numerals are represented by seven different symbols:\n * I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000.\n * Convert a Roman numeral string into an integer. \n * Numerals are written largest to smallest from left to right.\n * If a smaller numeral appears before a larger numeral, subtract the smaller from the larger.\n * \n * Example inputs and expected outputs:\n * romanToInt(\"III\") -> 3\n * romanToInt(\"LVIII\") -> 58\n * romanToInt(\"MCMXCIV\") -> 1994\n * \n * Rules:\n * 1. Roman numeral strings are valid (no need for validation).\n * 2. You can assume input strings are non-empty and contain valid Roman numerals.\n */\n\npublic class Main {\n    public static int romanToInt(String s) {\n        // Write your code here\n        return 0; // Placeholder\n    }\n\n    public static void main(String[] args) {\n        // Read the Roman numeral string from args[0]\n        String roman = args[0];\n        System.out.println(romanToInt(roman));\n    }\n}",
+        "test_cases": [
+            {
+                "args": ["III"],
+                "expected_output": "3"
+            },
+            {
+                "args": ["LVIII"],
+                "expected_output": "58"
+            },
+            {
+                "args": ["MCMXCIV"],
+                "expected_output": "1994"
+            },
+            {
+                "args": ["IV"],
+                "expected_output": "4"
+            },
+            {
+                "args": ["XC"],
+                "expected_output": "90"
+            }
+        ]
+    }
+    
+    
+    
+    
+    
+]

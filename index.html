@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Web IDE</title>
+    <link rel="stylesheet" href="style.css"> <!-- Path to the stylesheet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0/min/vs/loader.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Left side: Java IDE -->
+        <div class="editor-container">
+            <h2>Java IDE</h2>
+            <div id="problem">
+                <label for="problem-select">Choose a problem:</label>
+                <select id="problem-select" onchange="loadProblemTemplate()">
+                    {% for problem in problems %}
+                    <option value="{{ problem.id }}" data-template="{{ problem.template }}">
+                        {{ problem.prompt }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="editor" style="height: 600px;"></div>
+            <button onclick="runCode()">Run Code</button>
+            <pre id="output"></pre>
+            <pre id="result-message"></pre>
+        </div>
+        
+        <!-- Right side: ChatGPT chat -->
+        <div class="chat-container">
+            <h2>Chat with OpenAI</h2>
+            <div id="chat-log" oncopy="handleCopy(event)"></div>
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Path to the JavaScript -->
+</body>
+</html>
+
+

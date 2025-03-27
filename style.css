@@ -1,0 +1,175 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Layout: Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    gap: 20px;
+}
+
+.editor-container, .chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Editor Container */
+.editor-container {
+    border-right: 2px solid #ddd;
+    padding-right: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Editor */
+#editor {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    height: 600px; /* Increased height for Java-specific code */
+    font-family: monospace; /* Consistent font for code editing */
+    font-size: 14px; /* Comfortable font size for coding */
+}
+
+/* Output Styling */
+#output, #result-message {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+    height: 120px; /* Increased height for detailed outputs */
+    font-family: monospace; /* Match font style with editor */
+    white-space: pre-wrap; /* Preserve spacing for multiline output */
+    word-wrap: break-word; /* Prevent breaking long words awkwardly */
+}
+
+/* Success and Error Message Styling */
+.success-message {
+    color: green;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+/* Button Styling */
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Input Styling */
+#chat-input, select {
+    width: calc(100% - 90px);
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Chat Container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#chat-log {
+    flex: 1;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    max-height: 600px;
+    border-radius: 5px;
+}
+
+/* Chat Message Styling */
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+.message.user {
+    background-color: #daf8e3;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.message.assistant {
+    background-color: #ebebeb;
+    align-self: flex-start;
+    text-align: left;
+}
+
+/* Code Block Styling in Messages */
+.message.assistant code {
+    display: block;
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-family: monospace;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+/* Question Details Styling */
+.question-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #editor {
+        height: 400px;
+    }
+
+    #chat-log {
+        max-height: 400px;
+    }
+}
