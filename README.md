@@ -6,3 +6,5 @@ The project can be run by using pyinstaller to package the files (with a minimal
 
 The application opens a window in browser http://localhost:8000 on the users computer and within are a set of questions from a introductory programming course including tests, a java inbuilt IDE and a window to communicate with the AI. 
 
+Any questions on how to use the software ask at townsend.lu@yahoo.com 
+
